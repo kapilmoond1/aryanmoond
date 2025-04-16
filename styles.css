@@ -1,0 +1,345 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f5ff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(135deg, #6e48aa, #9d50bb);
+    color: white;
+    padding: 60px 0 40px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+header h1 span {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-top: 5px;
+}
+
+header p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Main Content Styles */
+main {
+    padding: 40px 0;
+}
+
+section {
+    margin-bottom: 50px;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #6e48aa;
+    margin-bottom: 20px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(to right, #6e48aa, #9d50bb);
+}
+
+.intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Alphabet Grid Styles */
+.alphabet-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.alphabet-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    height: 180px;
+    perspective: 1000px;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.alphabet-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: transform 0.6s;
+}
+
+.card-front {
+    background: linear-gradient(135deg, #f5f7fa, #e4e8f0);
+}
+
+.card-back {
+    background: linear-gradient(135deg, #6e48aa, #9d50bb);
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.alphabet-card.flipped .card-front {
+    transform: rotateY(180deg);
+}
+
+.alphabet-card.flipped .card-back {
+    transform: rotateY(0);
+}
+
+.letter {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #6e48aa;
+    margin-bottom: 5px;
+}
+
+.transliteration {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.card-back p {
+    text-align: center;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+/* Practice Section Styles */
+.practice-section {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.practice-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.practice-card {
+    background: linear-gradient(135deg, #f5f7fa, #e4e8f0);
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.practice-card h3 {
+    color: #6e48aa;
+    margin-bottom: 15px;
+}
+
+.btn {
+    background: linear-gradient(135deg, #6e48aa, #9d50bb);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(110, 72, 170, 0.3);
+}
+
+.options-container, .matching-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.option-btn {
+    background-color: white;
+    border: 2px solid #6e48aa;
+    color: #6e48aa;
+    padding: 10px 15px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.option-btn:hover {
+    background-color: #6e48aa;
+    color: white;
+}
+
+.feedback {
+    margin-top: 15px;
+    font-weight: 600;
+    min-height: 24px;
+}
+
+.feedback.correct {
+    color: #28a745;
+}
+
+.feedback.incorrect {
+    color: #dc3545;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .alphabet-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    }
+    
+    .alphabet-card {
+        height: 160px;
+    }
+    
+    .letter {
+        font-size: 3rem;
+    }
+    
+    .practice-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    header h1 span {
+        font-size: 1.2rem;
+    }
+    
+    .alphabet-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 15px;
+    }
+    
+    .alphabet-card {
+        height: 140px;
+    }
+    
+    .letter {
+        font-size: 2.5rem;
+    }
+    
+    .practice-section {
+        padding: 25px;
+    }
+}
+
+/* Animation Styles */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.alphabet-section, .practice-section {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+.alphabet-card {
+    animation: fadeIn 0.5s ease-out forwards;
+    animation-delay: calc(var(--i, 0) * 0.1s);
+    opacity: 0;
+}
+
+/* Sound player styles */
+#sound-player {
+    display: none;
+}
+
+/* Matching game styles */
+.matching-item {
+    background-color: white;
+    border: 2px solid #6e48aa;
+    color: #6e48aa;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 5px;
+}
+
+.matching-item:hover {
+    background-color: #f0e6ff;
+}
+
+.matching-item.selected {
+    background-color: #6e48aa;
+    color: white;
+}
+
+.matching-item.matched {
+    background-color: #28a745;
+    color: white;
+    border-color: #28a745;
+}
